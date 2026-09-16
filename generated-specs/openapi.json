@@ -1,0 +1,87 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Procesamiento de Saga para Creación de Pedidos en Java Spring Boot API Specification",
+    "version": "1.0.0",
+    "description": "Auto-generated OpenAPI specification for Procesamiento de Saga para Creación de Pedidos en Java Spring Boot from Gherkin feature spec."
+  },
+  "paths": {
+    "/api/v1/procesamiento-de-saga-para-creaci-n-de-pedidos-en-java-spring-boot": {
+      "post": {
+        "summary": "POST /api/v1/procesamiento-de-saga-para-creaci-n-de-pedidos-en-java-spring-boot",
+        "operationId": "sendProcesamientodeSagaparaCreacindePedidosenJavaSpringBoot",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "requestId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "payload": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "pago": {
+                        "type": "string"
+                      },
+                      "comando": {
+                        "type": "string"
+                      },
+                      "00": {
+                        "type": "string"
+                      },
+                      "idempotencykey": {
+                        "type": "string"
+                      },
+                      "outbox": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "pago",
+                      "comando",
+                      "00",
+                      "idempotencykey",
+                      "outbox"
+                    ]
+                  }
+                },
+                "required": [
+                  "requestId",
+                  "timestamp",
+                  "payload"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

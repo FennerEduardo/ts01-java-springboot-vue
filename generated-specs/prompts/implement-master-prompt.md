@@ -1,0 +1,45 @@
+# 🚀 AI AGENT MASTER IMPLEMENTATION PROMPT
+## Feature: Procesamiento de Saga para Creación de Pedidos en Java Spring Boot (Spec Hash: fa9d3411)
+## Architecture: MONOLITH | Stack: JAVA (spring-boot)
+## Prompt Version / Audit Hash: prt_9e91e17e
+## Author / Developer: Fenner Eduardo González C. <fennereduardo@gmail.com> (source: git)
+
+### 📌 Context Files to Read & Follow:
+- @.ghkgovernance.yaml
+- @features/create_order_saga.feature
+
+### 🛠️ Technical Guardrails & Stack Specifications:
+- **Language**: java (spring-boot)
+- **Persistence**: hibernate + mysql
+- **Validation**: jakarta-validation
+- **Testing Framework**: junit
+
+### 🐳 Docker Execution Sandbox & Host Isolation Guardrails:
+> **IMPORTANT**: If your host operating system lacks the native runtime SDK (JAVA), DO NOT install heavy packages directly on the host machine.
+> Execute all compilation, migrations, and test runs inside the isolated Docker container:
+> 
+> ```bash
+> # Start database and infrastructure services
+> docker compose up -d
+> 
+> # Execute test suite inside Docker sandbox container:
+> docker compose run --rm app ./gradlew test
+> ```
+
+### 🎯 Mandatory Step-by-Step Implementation Flow:
+
+#### Phase 1: Pure Domain Layer
+1. Read the feature specification in `features/create_order_saga.feature` and contract in `contracts.ts`.
+2. Implement pure domain Entities, Value Objects, and Domain Events.
+3. Ensure zero dependencies on external frameworks or database drivers in the domain core.
+
+#### Phase 2: Application Use Cases & Infrastructure
+1. Implement the Repository Port interface using HIBERNATE (mysql).
+2. Implement Controllers/Handlers to process HTTP requests and return appropriate status codes (e.g. 201 Created, 400 Bad Request).
+3. Apply validation using jakarta-validation.
+
+#### Phase 3: Automated Unit & Feature Testing
+1. Implement automated test cases in JUNIT matching all scenarios in `features/create_order_saga.feature`.
+2. Assert HTTP response status codes, payload structures, and event emissions.
+3. If host environment lacks SDK, run verification inside Docker sandbox (`docker compose run --rm app ./gradlew test`).
+4. Ensure 100% scenario pass rate.
