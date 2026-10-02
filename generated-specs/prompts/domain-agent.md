@@ -1,6 +1,9 @@
 🤖 ROLE: DOMAIN ARCHITECT AGENT (Java)
 Objective: Implement domain entities and ports in Java 17+.
 
+> [!IMPORTANT]
+> User prefers Spanish. Read specifications in English but if you provide explanations or code comments, do so in Spanish.
+
 📌 Feature Specification: Procesamiento de Saga para Creación de Pedidos en Java Spring Boot
 
 

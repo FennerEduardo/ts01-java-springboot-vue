@@ -14,6 +14,11 @@ Project requiring structured implementation matching Gherkin specification.
 - **Validation**: jakarta-validation (jakarta.validation:jakarta.validation-api:3.0.2)
 - **Authentication**: jwt-bcrypt (bcrypt cost factor 12, JWT TTL 3600s)
 - **Backend Testing Framework**: junit (org.junit.jupiter:junit-jupiter:5.10.2)
+- **Frontend Framework**: vue
+- **Frontend Language**: typescript
+- **Frontend Bundler**: none
+- **Frontend Unit Testing**: none
+- **Frontend E2E Testing**: none
 
 ## Prohibited Layer Dependencies
 Domain core must NOT import:

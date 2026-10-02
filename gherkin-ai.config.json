@@ -17,5 +17,9 @@
     "strictLayerBoundaries": true,
     "coverageTarget": 85
   },
-  "outputDir": "./generated-specs"
+  "outputDir": "./generated-specs",
+  "frontendStack": {
+    "framework": "vue",
+    "language": "typescript"
+  }
 }

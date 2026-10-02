@@ -9,7 +9,7 @@
     "/api/v1/procesamiento-de-saga-para-creaci-n-de-pedidos-en-java-spring-boot": {
       "post": {
         "summary": "POST /api/v1/procesamiento-de-saga-para-creaci-n-de-pedidos-en-java-spring-boot",
-        "operationId": "sendProcesamientodeSagaparaCreacindePedidosenJavaSpringBoot",
+        "operationId": "sendProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBoot",
         "security": [],
         "requestBody": {
           "required": true,
@@ -38,9 +38,6 @@
                       "comando": {
                         "type": "string"
                       },
-                      "00": {
-                        "type": "string"
-                      },
                       "idempotencykey": {
                         "type": "string"
                       },
@@ -52,7 +49,6 @@
                       "id",
                       "pago",
                       "comando",
-                      "00",
                       "idempotencykey",
                       "outbox"
                     ]
