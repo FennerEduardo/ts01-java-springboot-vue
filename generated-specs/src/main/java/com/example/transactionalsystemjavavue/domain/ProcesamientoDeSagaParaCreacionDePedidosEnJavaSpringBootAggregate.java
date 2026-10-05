@@ -21,6 +21,14 @@ public class ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootAggregate {
         this.id = id;
     }
 
+    /** Rebuilds an aggregate from persisted state; no events are recorded. */
+    public static ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootAggregate restore(String id, ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootState state, long version) {
+        var aggregate = new ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootAggregate(id);
+        aggregate.state = state;
+        aggregate.version = version;
+        return aggregate;
+    }
+
     public String getId() { return id; }
     public ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootState getState() { return state; }
     public long getVersion() { return version; }

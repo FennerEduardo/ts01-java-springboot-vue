@@ -27,3 +27,11 @@ Objective: Implement automated tests using JUnit 5 and MockMvc.
    - Application Layer (Use Cases) orchestrates domain entities but does not contain business logic.
    - Infrastructure Layer implements persistence, external APIs, and framework-specific code.
 3. **OUTPUT FORMAT**: You MUST output your response strictly as valid JSON. Do not include markdown codeblocks (like ```json). The JSON must be an object with a "files" array: { "files": [{ "filePath": "...", "content": "..." }] }. Any deviation will cause a pipeline failure.
+
+## [MANDATORY] Step Definitions Dictionary
+You MUST reuse the following existing Step Definitions whenever possible instead of inventing new ones:
+
+- `Then el Saga Orchestration Service de Spring Boot debe registrar la transacción` (found in /home/fenner/apps/fenner/ghk-test-projects/ts01-java-springboot-vue/generated-specs/src/test/java/com/example/transactionalsystemjavavue/bdd/ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootSteps.java)
+- `Then el Saga Orchestration Service de Spring Boot debe registrar la transacción` (found in /home/fenner/apps/fenner/ghk-test-projects/ts01-java-springboot-vue/generated-specs/src/test/java/com/example/transactionalsystemjavavue/bdd/ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootSteps.java)
+- `Then se debe emitir un hash SHA-256 de auditoría en la respuesta` (found in /home/fenner/apps/fenner/ghk-test-projects/ts01-java-springboot-vue/generated-specs/src/test/java/com/example/transactionalsystemjavavue/bdd/ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootSteps.java)
+- `Then se debe emitir un hash SHA-256 de auditoría en la respuesta` (found in /home/fenner/apps/fenner/ghk-test-projects/ts01-java-springboot-vue/generated-specs/src/test/java/com/example/transactionalsystemjavavue/bdd/ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootSteps.java)
