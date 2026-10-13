@@ -1,5 +1,9 @@
 # language: es
+@aggregate:OrderSaga
 Característica: Procesamiento de Saga para Creación de Pedidos en Java Spring Boot
+  Como cliente de la tienda
+  Quiero crear un pedido
+  Para recibir la confirmación en la interfaz
 
   Escenario: Creación e Integración Exitosa de Pedido con Notificación en Vue.js
     Dado que existe un cliente activo con ID "cust-java-001"

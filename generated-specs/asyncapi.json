@@ -1,18 +1,18 @@
 {
   "asyncapi": "2.6.0",
   "info": {
-    "title": "Procesamiento de Saga para Creación de Pedidos en Java Spring Boot AsyncAPI Specification",
+    "title": "transactional-system-java-vue Events",
     "version": "1.0.0",
-    "description": "Auto-generated AsyncAPI events for Procesamiento de Saga para Creación de Pedidos en Java Spring Boot from Gherkin feature spec."
+    "description": "Events of transactional-system-java-vue, merged from 1 feature contract(s) in contracts/."
   },
   "defaultContentType": "application/json",
   "channels": {
-    "procesamientodesagaparacreaciondepedidosenjavaspringboot/events/orderoutboxevents": {
+    "ordersaga/events/orderoutboxevents": {
       "bindings": {
         "rabbitmq": {
           "is": "routingKey",
           "queue": {
-            "name": "procesamientodesagaparacreaciondepedidosenjavaspringboot.orderoutboxevents.queue",
+            "name": "ordersaga.orderoutboxevents.queue",
             "durable": true,
             "exclusive": false,
             "autoDelete": false
@@ -20,7 +20,7 @@
           "bindingVersion": "0.2.0"
         },
         "kafka": {
-          "topic": "procesamientodesagaparacreaciondepedidosenjavaspringboot.orderoutboxevents",
+          "topic": "ordersaga.orderoutboxevents",
           "partitions": 3,
           "replicas": 2,
           "bindingVersion": "0.3.0"

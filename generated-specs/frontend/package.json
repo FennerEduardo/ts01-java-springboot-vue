@@ -1,5 +1,5 @@
 {
-  "name": "procesamiento-de-saga-para-creacion-de-pedidos-en-java-spring-boot-frontend",
+  "name": "order-saga-frontend",
   "private": true,
   "version": "0.1.0",
   "type": "module",

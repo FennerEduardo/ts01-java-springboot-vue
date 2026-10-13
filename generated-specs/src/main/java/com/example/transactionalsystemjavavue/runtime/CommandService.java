@@ -1,9 +1,9 @@
 package com.example.transactionalsystemjavavue.runtime;
 
-import com.example.transactionalsystemjavavue.domain.ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootAggregate;
-import com.example.transactionalsystemjavavue.domain.ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootCommand;
-import com.example.transactionalsystemjavavue.domain.ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootDomainEvent;
-import com.example.transactionalsystemjavavue.domain.ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootState;
+import com.example.transactionalsystemjavavue.domain.OrderSagaAggregate;
+import com.example.transactionalsystemjavavue.domain.OrderSagaCommand;
+import com.example.transactionalsystemjavavue.domain.OrderSagaDomainEvent;
+import com.example.transactionalsystemjavavue.domain.OrderSagaState;
 import com.example.transactionalsystemjavavue.domain.DomainValidationException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.opentelemetry.api.trace.Span;
@@ -17,24 +17,33 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.function.BiFunction;
 
 /**
  * Executes a command in one transaction: idempotency claim, aggregate load (FOR UPDATE), domain
  * logic, aggregate save and outbox insert. A domain error rolls back everything.
  */
 public class CommandService {
-    private static final String AGGREGATE_TYPE = "ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBoot";
+    /** Aggregate type used when a request does not name one. */
+    public static final String DEFAULT_AGGREGATE = "OrderSaga";
     private static final ObjectMapper JSON = new ObjectMapper().findAndRegisterModules();
-    private static final Map<String, BiFunction<ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootAggregate, ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootCommand, ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootDomainEvent>> COMMANDS = Map.of(
-        "create_order", (a, c) -> a.createOrder(c)
-    );
 
-    public record Request(String tenantId, String aggregateId, String command, Map<String, Object> payload, String idempotencyKey, String traceparent) {
+    /** aggregateType: the feature's aggregate (e.g. "OrderSaga"); null means DEFAULT_AGGREGATE. */
+    public record Request(String tenantId, String aggregateId, String command, Map<String, Object> payload, String idempotencyKey, String traceparent, String aggregateType) {
+        public Request(String tenantId, String aggregateId, String command, Map<String, Object> payload, String idempotencyKey, String traceparent) {
+            this(tenantId, aggregateId, command, payload, idempotencyKey, traceparent, null);
+        }
+
         public Request(String tenantId, String aggregateId, String command) {
-            this(tenantId, aggregateId, command, Map.of(), null, null);
+            this(tenantId, aggregateId, command, Map.of(), null, null, null);
+        }
+
+        String type() {
+            return aggregateType == null || aggregateType.isBlank() ? DEFAULT_AGGREGATE : aggregateType;
         }
     }
+
+    /** The result of running a command on an aggregate: its new state and the recorded event. */
+    private record Applied(String state, long version, String eventType, long eventVersion, Object event) {}
 
     public record Result(String status, String aggregateId, String eventType, Long version) {}
 
@@ -51,7 +60,7 @@ public class CommandService {
     public Result handle(Request req) throws SQLException {
         if (req.tenantId() == null || req.tenantId().isBlank()) throw new DomainValidationException("tenantId is required");
         Context parent = Telemetry.contextFrom(req.traceparent());
-        Span span = Telemetry.tracer().spanBuilder("ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBoot." + req.command()).setParent(parent).setSpanKind(SpanKind.INTERNAL)
+        Span span = Telemetry.tracer().spanBuilder("OrderSaga." + req.command()).setParent(parent).setSpanKind(SpanKind.INTERNAL)
             .setAttribute("tenant.id", req.tenantId()).setAttribute("aggregate.id", req.aggregateId()).startSpan();
         try (Connection conn = connections.open()) {
             conn.setAutoCommit(false);
@@ -89,39 +98,57 @@ public class CommandService {
                 return new Result("in-progress", req.aggregateId(), null, null);
             }
         }
-        ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootAggregate aggregate;
+        String type = req.type();
+        String state = null;
+        long version = 0;
         try (PreparedStatement ps = conn.prepareStatement("SELECT state, version FROM " + s + ".ghk_aggregates WHERE tenant_id = ? AND aggregate_type = ? AND id = ? FOR UPDATE")) {
             ps.setString(1, req.tenantId());
-            ps.setString(2, AGGREGATE_TYPE);
+            ps.setString(2, type);
             ps.setString(3, req.aggregateId());
             try (ResultSet rs = ps.executeQuery()) {
-                aggregate = rs.next()
-                    ? ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootAggregate.restore(req.aggregateId(), ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootState.valueOf(rs.getString(1)), rs.getLong(2))
-                    : new ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootAggregate(req.aggregateId());
+                if (rs.next()) {
+                    state = rs.getString(1);
+                    version = rs.getLong(2);
+                }
             }
         }
-        var handler = COMMANDS.get(req.command());
-        if (handler == null) throw new DomainValidationException("Unknown command " + req.command());
-        ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootDomainEvent event = handler.apply(aggregate, new ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootCommand(req.aggregateId(), req.payload() == null ? Map.of() : req.payload()));
+        Map<String, Object> payload = req.payload() == null ? Map.of() : req.payload();
+        Applied applied = switch (type) {
+            case "OrderSaga" -> applyOrderSaga(req.aggregateId(), state, version, req.command(), payload);
+            default -> throw new DomainValidationException("Unknown aggregate type " + type);
+        };
         update(conn, "INSERT INTO " + s + ".ghk_aggregates (tenant_id, aggregate_type, id, state, version) VALUES (?, ?, ?, ?, ?) "
             + "ON CONFLICT (tenant_id, aggregate_type, id) DO UPDATE SET state = EXCLUDED.state, version = EXCLUDED.version, updated_at = now()",
-            req.tenantId(), AGGREGATE_TYPE, req.aggregateId(), aggregate.getState().name(), aggregate.getVersion());
-        String eventType = event.type().name();
+            req.tenantId(), type, req.aggregateId(), applied.state(), applied.version());
         update(conn, "INSERT INTO " + s + ".ghk_outbox (id, tenant_id, aggregate_id, event_type, payload, traceparent) VALUES (?, ?, ?, ?, ?, ?)",
-            UUID.randomUUID().toString(), req.tenantId(), req.aggregateId(), eventType, writeJson(event), traceparent);
-        Result result = new Result("created", req.aggregateId(), eventType, event.version());
+            UUID.randomUUID().toString(), req.tenantId(), req.aggregateId(), applied.eventType(), writeJson(applied.event()), traceparent);
+        Result result = new Result("created", req.aggregateId(), applied.eventType(), applied.eventVersion());
         if (key != null) {
             update(conn, "UPDATE " + s + ".ghk_idempotency SET status = 'COMPLETED', response = ? WHERE tenant_id = ? AND key = ?", writeJson(result), req.tenantId(), key);
         }
         return result;
     }
 
+    private static Applied applyOrderSaga(String id, String state, long version, String command, Map<String, Object> payload) {
+        OrderSagaAggregate aggregate = state == null ? new OrderSagaAggregate(id) : OrderSagaAggregate.restore(id, OrderSagaState.valueOf(state), version);
+        OrderSagaCommand cmd = new OrderSagaCommand(id, payload);
+        OrderSagaDomainEvent event = switch (command) {
+            case "create_order" -> aggregate.createOrder(cmd);
+            default -> throw new DomainValidationException("Unknown command " + command);
+        };
+        return new Applied(aggregate.getState().name(), aggregate.getVersion(), event.type().name(), event.version(), event);
+    }
+
     /** The aggregate as tenantId sees it (empty for other tenants' aggregates). */
     public Optional<Snapshot> load(String tenantId, String aggregateId) throws SQLException {
+        return load(tenantId, aggregateId, DEFAULT_AGGREGATE);
+    }
+
+    public Optional<Snapshot> load(String tenantId, String aggregateId, String aggregateType) throws SQLException {
         try (Connection conn = connections.open();
              PreparedStatement ps = conn.prepareStatement("SELECT state, version FROM " + s + ".ghk_aggregates WHERE tenant_id = ? AND aggregate_type = ? AND id = ?")) {
             ps.setString(1, tenantId);
-            ps.setString(2, AGGREGATE_TYPE);
+            ps.setString(2, aggregateType);
             ps.setString(3, aggregateId);
             try (ResultSet rs = ps.executeQuery()) {
                 return rs.next() ? Optional.of(new Snapshot(rs.getString(1), rs.getLong(2))) : Optional.empty();

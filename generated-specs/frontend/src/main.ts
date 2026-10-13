@@ -1,5 +1,7 @@
-import { createApp } from 'vue';
+import { createApp, h } from 'vue';
 import { createPinia } from 'pinia';
-import ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootPanel from './components/ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootPanel.vue';
+import OrderSagaPanel from './components/OrderSagaPanel.vue';
 
-createApp(ProcesamientoDeSagaParaCreacionDePedidosEnJavaSpringBootPanel).use(createPinia()).mount('#app');
+const App = { render: () => [h(OrderSagaPanel)] };
+
+createApp(App).use(createPinia()).mount('#app');

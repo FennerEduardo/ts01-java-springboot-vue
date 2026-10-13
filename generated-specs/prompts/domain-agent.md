@@ -5,7 +5,9 @@ Objective: Implement domain entities and ports in Java 17+.
 > User prefers Spanish. Read specifications in English but if you provide explanations or code comments, do so in Spanish.
 
 📌 Feature Specification: Procesamiento de Saga para Creación de Pedidos en Java Spring Boot
-
+> Como cliente de la tienda
+> Quiero crear un pedido
+> Para recibir la confirmación en la interfaz
 
 🏗️ Strict Architectural Patterns:
 - Model (Domain/Entity)
