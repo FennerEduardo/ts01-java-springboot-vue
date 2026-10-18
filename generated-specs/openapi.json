@@ -6,9 +6,9 @@
     "description": "Service API of transactional-system-java-vue, merged from 1 feature contract(s) in contracts/."
   },
   "paths": {
-    "/api/v1/procesamiento-de-saga-para-creaci-n-de-pedidos-en-java-spring-boot": {
+    "/api/v1/order-saga": {
       "post": {
-        "summary": "POST /api/v1/procesamiento-de-saga-para-creaci-n-de-pedidos-en-java-spring-boot",
+        "summary": "POST /api/v1/order-saga",
         "operationId": "sendOrderSaga",
         "security": [],
         "requestBody": {

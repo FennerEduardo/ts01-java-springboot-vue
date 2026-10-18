@@ -83,4 +83,12 @@ class OrderSagaHttpIntegrationTest {
         String path = "/api/v1/order-saga/" + UUID.randomUUID() + "/no_such_command";
         assertEquals(422, post(path, Map.of("Authorization", bearer(Map.of(JwtTenantFilter.TENANT_CLAIM, "acme")))).statusCode());
     }
+
+    @Test
+    void reportsHealth() throws Exception {
+        for (String probe : new String[] {"/health", "/health/ready"}) {
+            HttpResponse<String> res = HTTP.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + probe)).build(), HttpResponse.BodyHandlers.ofString());
+            assertEquals(200, res.statusCode(), probe);
+        }
+    }
 }

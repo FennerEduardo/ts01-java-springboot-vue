@@ -6,9 +6,9 @@
     "description": "Auto-generated OpenAPI specification for Procesamiento de Saga para Creación de Pedidos en Java Spring Boot from Gherkin feature spec."
   },
   "paths": {
-    "/api/v1/procesamiento-de-saga-para-creaci-n-de-pedidos-en-java-spring-boot": {
+    "/api/v1/order-saga": {
       "post": {
-        "summary": "POST /api/v1/procesamiento-de-saga-para-creaci-n-de-pedidos-en-java-spring-boot",
+        "summary": "POST /api/v1/order-saga",
         "operationId": "sendOrderSaga",
         "security": [],
         "requestBody": {
