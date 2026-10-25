@@ -6,21 +6,13 @@
 
 export interface OrderSagaFixture {
   id: string;
-  id: string;
-  pago: string;
-  comando: string;
-  idempotencykey: string;
-  outbox: string;
+
 }
 
 export function createOrderSagaFixture(): OrderSagaFixture {
   return {
     id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
-    id: 'test_value',
-    pago: 'test_value',
-    comando: 'test_value',
-    idempotencykey: 'test_value',
-    outbox: 'test_value',
+
   };
 }
 

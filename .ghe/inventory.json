@@ -1,0 +1,481 @@
+{
+  "version": "2",
+  "cliVersion": "3.2.1",
+  "features": {
+    "features/create_order_saga.feature": {
+      "checksum": "9d2f080b16c7972b3dcb9c05390d1fb8d398e61e82e3fdb32a8783be77d8349c",
+      "contracts": {
+        "contracts/create-order-saga/ADR-OrderSaga.md": "27cb62b740daa8e8def4310a2ab3c0817feaf3fcbd45e9d6e8d3bbac2ec48a89",
+        "contracts/create-order-saga/openapi.json": "80ae859b9a84b5516b6bd7f2d3f15b6b70d988ba290c3ae413ffe40ab6f97888",
+        "openapi.json": "478abc7008f79ad3ed880608de3e0e1f68c4230073ec85e6f876b9014cd6546a",
+        "contracts/create-order-saga/asyncapi.json": "e39eff666e3be74840501c7c093b02b1c0cf9eadfb62b71f1771607ca0246529",
+        "asyncapi.json": "2ecbcd5ff7c36576dbe32762f333f771f6ede85149e35453c8f68d00376b3344"
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "filePath": ".dockerignore",
+      "type": "test",
+      "checksum": "e017cb79f67ece5011e46bcfeb6958bf53f64cb2159ec6bd92283a37c9e71de2",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": ".env.example",
+      "type": "config",
+      "checksum": "46cab4391661ce4dcec32f6476fc4fda539d8e442a5a206c345a034b1b5106b0",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "ADR-001-architecture-decisions.md",
+      "type": "other",
+      "checksum": "27cb62b740daa8e8def4310a2ab3c0817feaf3fcbd45e9d6e8d3bbac2ec48a89",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "asyncapi.json",
+      "type": "contract",
+      "checksum": "2ecbcd5ff7c36576dbe32762f333f771f6ede85149e35453c8f68d00376b3344",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "contracts/create-order-saga/ADR-OrderSaga.md",
+      "type": "other",
+      "checksum": "27cb62b740daa8e8def4310a2ab3c0817feaf3fcbd45e9d6e8d3bbac2ec48a89",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "contracts/create-order-saga/asyncapi.json",
+      "type": "contract",
+      "checksum": "e39eff666e3be74840501c7c093b02b1c0cf9eadfb62b71f1771607ca0246529",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "contracts/create-order-saga/openapi.json",
+      "type": "openapi",
+      "checksum": "80ae859b9a84b5516b6bd7f2d3f15b6b70d988ba290c3ae413ffe40ab6f97888",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "docker-compose.yml",
+      "type": "config",
+      "checksum": "f7e26a36cd11b7cd49614152e47f65ac8bd6934c1dacdd3bb4dd0f124595cf9d",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "Dockerfile",
+      "type": "test",
+      "checksum": "304e93b558413bcc5d076fa18f2af45b702b2716d09a1c4f252c1fb998ebdcd0",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "features/create_order_saga.feature",
+      "type": "other",
+      "checksum": "9d2f080b16c7972b3dcb9c05390d1fb8d398e61e82e3fdb32a8783be77d8349c",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "fixtures.ts",
+      "type": "fixture",
+      "checksum": "38e2cd1c74855893cc57cf046fa7318cbb58b591c54a194626719dc428667c35",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/index.html",
+      "type": "test",
+      "checksum": "2156fe6d8428caddeba412ca05981788b1976bdd8188f8b3f500cc802dd8d0b1",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/package.json",
+      "type": "test",
+      "checksum": "b6f0777e344c4130a8372c952e6543440c2ec58d18e93835dbfef5adebe37eaf",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/src/api/order-saga-client.test.ts",
+      "type": "test",
+      "checksum": "46774cfb1f3b35ac412260aaded9d7f110bfd6a21c1161c4f6cb1b614e39e1ae",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/src/api/order-saga-client.ts",
+      "type": "test",
+      "checksum": "5410db29b3b5e3482892eaf22c084d9bebfd4e9a43f0c4b6d990b2c89ae25a1b",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/src/components/OrderSagaPanel.test.ts",
+      "type": "test",
+      "checksum": "f9338f7e4169ed8035ec3e64fa33a3e96b07a001e275c7332d722c6d36d5fda6",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/src/components/OrderSagaPanel.vue",
+      "type": "test",
+      "checksum": "44c95f51a137ce32de26cf738563379c396787fbccbc225595e6a56bbdb1bf61",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/src/env.d.ts",
+      "type": "test",
+      "checksum": "495bc6291784edae53cb91ba0783ede95408cbe6f2060e87ebd39f79627d7c03",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/src/main.ts",
+      "type": "test",
+      "checksum": "c856f70791723461deb1c6bb0596938dcc2ec58a49481fd29e46f2192786bf38",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/src/stores/order-saga.store.test.ts",
+      "type": "test",
+      "checksum": "b126f412d1f8e659cd965dbfe3ce95975ac74ce8d8bde530acc30a9754e41e5e",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/src/stores/order-saga.store.ts",
+      "type": "test",
+      "checksum": "780bba0230d06532a3ec2d721d46a0f773f6b54ca3082b1baa0025c67115cf53",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/tsconfig.json",
+      "type": "test",
+      "checksum": "db9fe19dc1e886024565a4932e58a2b9920b6e6a4fb40196d81bbecb3bbfd104",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "frontend/vite.config.ts",
+      "type": "test",
+      "checksum": "aedec4031f42c268137d160947bd8120b715b9a25f25302d57b41b0567a220f2",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "openapi.json",
+      "type": "openapi",
+      "checksum": "478abc7008f79ad3ed880608de3e0e1f68c4230073ec85e6f876b9014cd6546a",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "pom.xml",
+      "type": "config",
+      "checksum": "d1f56b86c5063d892887bf5a46968f1e9934531a12cea45b77475f8f7727fcad",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "prompts/backend-agent.md",
+      "type": "prompt",
+      "checksum": "3affd2ddfc1cd30a886f049d919ccd2595eabe59841264d6d9f5e916cb16b262",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "prompts/domain-agent.md",
+      "type": "prompt",
+      "checksum": "b3e3ef99fbecc756093327e926aec93eccfc169596c76596930969d974a1b488",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "prompts/qa-agent.md",
+      "type": "prompt",
+      "checksum": "9f9d57dff04a20ee4d7ff445351c23bc1e6b3df4d45d4d28951fe53de9c7062c",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "seed.sql",
+      "type": "fixture",
+      "checksum": "d1c3370a9fb3963ff5cbcd2ef07e4aef572fe1cb5a0d112fd6fdc70d1b80e025",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/api/HealthController.java",
+      "type": "test",
+      "checksum": "e6651a933996d5a7adf938f9c57836a65f5015f5aa750fb66fd81a76c3b0fe2b",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/api/OrderSagaController.java",
+      "type": "test",
+      "checksum": "d74e851fd62bf631628a2bf339168e073f959fe4e65b310c50cd8cfbf97964a5",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/Application.java",
+      "type": "test",
+      "checksum": "05b6a3beb6a79fa2cfc76f1541dd0640b8a5b6dec074d3a3024d7974c8c3fbc1",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/application/dto/ComandoDTO.java",
+      "type": "test",
+      "checksum": "df6b766cdc42fe93d9bd57d1717bb1f9a76252129fa9667c45a609af50adfda1",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-23T16:24:55.114Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/application/dto/IdDTO.java",
+      "type": "test",
+      "checksum": "ef521d155cecb2e360e87bad67a49b06fc8dd96e453c3ebee338010819a431b1",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-23T16:24:55.114Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/application/dto/IdempotencykeyDTO.java",
+      "type": "test",
+      "checksum": "f447e02a9928a6583f925b9144ff59d10a1f1789382fd0b430f91cfa7723e544",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-23T16:24:55.114Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/application/dto/OutboxDTO.java",
+      "type": "test",
+      "checksum": "eea70399d76beb1fcf0acacd91717a8c9d53c09788cf6c619134e7d9e544a266",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-23T16:24:55.114Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/application/dto/PagoDTO.java",
+      "type": "test",
+      "checksum": "dd3c025ce86c05c42bffc8f620f42eb4ed4b0067db9b64632197422a45990c31",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-23T16:24:55.114Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/auth/JwtTenantFilter.java",
+      "type": "test",
+      "checksum": "dc85ccd90337cbff78fcddd7aa998816f11fddf9b1ee8e02368f821d796b5cda",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/domain/DomainValidationException.java",
+      "type": "test",
+      "checksum": "426b070414ede1e1ab13d3251e4bba64b3c0ad04341ffc3a6fe571aa28c73385",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/domain/OrderSagaAggregate.java",
+      "type": "test",
+      "checksum": "248ff8836820701fecaa551ab872d704aea15b8a291fc14cb158960af179db9c",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/domain/OrderSagaCommand.java",
+      "type": "test",
+      "checksum": "752f98dce01d13e2243780eea64588807660e786c59f58b73fbd97ade3c71d6c",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/domain/OrderSagaDomainEvent.java",
+      "type": "test",
+      "checksum": "5a10f3c13410ef78c3fee0bcc36036510815db17d229c12d7522c02e133f4b42",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/domain/OrderSagaEventType.java",
+      "type": "test",
+      "checksum": "3898aa79e2ce3bdc32187356d21119ea5cf0fe7cdaafac41c55dce1748148081",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/domain/OrderSagaState.java",
+      "type": "test",
+      "checksum": "1330a4fb3b453738c96fdfe31eb8c8aec06fca526b66c08a7ce53ff7d1d381fc",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/infrastructure/telemetry/OpenTelemetryConfig.java",
+      "type": "test",
+      "checksum": "fa349924e5aa47cd1ab84911bee2d79a2cb3c2058a6aa509139f4d4b1342953a",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/Broker.java",
+      "type": "test",
+      "checksum": "a3c203750628ee04eaa26bbe922f260d658ba437766418544b5bb1ff21def775",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/BrokerMessage.java",
+      "type": "test",
+      "checksum": "2ab0ec25220c818eeccc214b54eead8443904d41fc1a44ea64f07ec8678589ec",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/CommandService.java",
+      "type": "test",
+      "checksum": "7fce8c9417b78f96453f643b0590586c9c4f6183d230ade710bfa2df95d876d4",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/ConnectionFactory.java",
+      "type": "test",
+      "checksum": "44e72c5162efe9cd196bd7200666cda51a4d053e1febc4bfd5b6e48dd78ee399",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/EventPublisher.java",
+      "type": "test",
+      "checksum": "3e4dea22402f609cd7c0ac4e3bba9915b9156b0646f48cab8040060a4f3a5c68",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/EventSubscription.java",
+      "type": "test",
+      "checksum": "6e519009c77b535853ce0b94ce3af779bd1066609d28f677efca15bec13f0590",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/InboxConsumer.java",
+      "type": "test",
+      "checksum": "11ca85c01fe078944cae61657341ea54d2438d2e492f5b5e1e2460880d1987d3",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/OutboxRelay.java",
+      "type": "test",
+      "checksum": "6efc7d085c5ca64bcdb0507a31f172452363f8128ef4fc72246ab4c101df5ddf",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/PubSubBroker.java",
+      "type": "test",
+      "checksum": "c6e999f831bfb5a5196d1336aba0e2da7f611a4f2d556d87a1c448c0c1d80141",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/RabbitMqBroker.java",
+      "type": "test",
+      "checksum": "397c838e60424c92769bb71d4fb6edafbf6baa14d6b301acc3820d1bcbd09c06",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/RuntimeConfiguration.java",
+      "type": "test",
+      "checksum": "df877c5b4e3617e22cd134c3b1bb97ecabd7bbaab8ca5c689492e464a92993c2",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/SagaOrchestrator.java",
+      "type": "test",
+      "checksum": "8f4251a347ac1b1cb4cf8c5039feca066e02d7de9376782eb22f0dcec22b27a7",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/Schema.java",
+      "type": "test",
+      "checksum": "f82d7ce4d5eaa8098971f35017518714786a8594671a3e0f07fcfd73cba7dc37",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/Telemetry.java",
+      "type": "test",
+      "checksum": "0b51f4ef26278efa78da419bbbd9a2ffc0252c188b4db49812d6bcf9a148d4c7",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/Topology.java",
+      "type": "test",
+      "checksum": "a06095c58ede4f429308b605ccb90102ec62efd7f6162129c2c0d95b0a6499e5",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/main/resources/application.properties",
+      "type": "test",
+      "checksum": "8a2582a99014e0e49851ef366b7fa4fcdba142f98965892e35321fbd8a751eb5",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/test/java/com/example/transactionalsystemjavavue/api/OrderSagaHttpIntegrationTest.java",
+      "type": "test",
+      "checksum": "a1bf39d414b4535b93b27936d90b95008de1b6a6742cb5e1e9e2d68f093f3bc4",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/test/java/com/example/transactionalsystemjavavue/bdd/OrderSagaSteps.java",
+      "type": "test",
+      "checksum": "a8072357cbfb7a5e1f1155a9802216367c8b899d7dd2effc2d59a9fed742bcbb",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/test/java/com/example/transactionalsystemjavavue/bdd/RunCucumberTest.java",
+      "type": "test",
+      "checksum": "5b3a7ad1a33e433a1bd0a01bb8419df1747a664d25982f6cb40b34f4a71b6ceb",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/test/java/com/example/transactionalsystemjavavue/domain/OrderSagaAggregateTest.java",
+      "type": "test",
+      "checksum": "9a3211b91771276bbe1a1853d8f76ccf93af1d649679c4bff3803ce44dc045be",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    },
+    {
+      "filePath": "src/test/java/com/example/transactionalsystemjavavue/runtime/RuntimeIntegrationTest.java",
+      "type": "test",
+      "checksum": "86636a6dcdf0e9685588d974b3070f74e2933db5a27b17614f462a9a9b92de29",
+      "feature": "features/create_order_saga.feature",
+      "generatedAt": "2026-10-25T04:57:32.092Z"
+    }
+  ],
+  "executions": []
+}
