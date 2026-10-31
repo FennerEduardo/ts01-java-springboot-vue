@@ -1,6 +1,6 @@
 {
   "version": "2",
-  "cliVersion": "3.2.1",
+  "cliVersion": "3.2.2",
   "features": {
     "features/create_order_saga.feature": {
       "checksum": "9d2f080b16c7972b3dcb9c05390d1fb8d398e61e82e3fdb32a8783be77d8349c",
