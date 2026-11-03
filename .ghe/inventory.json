@@ -1,6 +1,6 @@
 {
   "version": "2",
-  "cliVersion": "3.2.2",
+  "cliVersion": "3.3.0",
   "features": {
     "features/create_order_saga.feature": {
       "checksum": "9d2f080b16c7972b3dcb9c05390d1fb8d398e61e82e3fdb32a8783be77d8349c",
@@ -24,9 +24,9 @@
     {
       "filePath": ".env.example",
       "type": "config",
-      "checksum": "46cab4391661ce4dcec32f6476fc4fda539d8e442a5a206c345a034b1b5106b0",
+      "checksum": "3923d350b6876b76bd0bd910329824e497e06d618bf1c38a619b0abf601a3940",
       "feature": "features/create_order_saga.feature",
-      "generatedAt": "2026-10-25T04:57:32.092Z"
+      "generatedAt": "2026-11-03T13:47:21.672Z"
     },
     {
       "filePath": "ADR-001-architecture-decisions.md",
@@ -66,9 +66,9 @@
     {
       "filePath": "docker-compose.yml",
       "type": "config",
-      "checksum": "f7e26a36cd11b7cd49614152e47f65ac8bd6934c1dacdd3bb4dd0f124595cf9d",
+      "checksum": "8b0e087d79232ecccaad31fe411fedcfe6a02c099a423994dfb789201bdd71e9",
       "feature": "features/create_order_saga.feature",
-      "generatedAt": "2026-10-25T04:57:32.092Z"
+      "generatedAt": "2026-11-03T13:47:21.672Z"
     },
     {
       "filePath": "Dockerfile",
@@ -353,9 +353,9 @@
     {
       "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/ConnectionFactory.java",
       "type": "test",
-      "checksum": "44e72c5162efe9cd196bd7200666cda51a4d053e1febc4bfd5b6e48dd78ee399",
+      "checksum": "7d882620299e35ff819a0afc196e449d97ad06c8df0af05a8e7011f641737c9a",
       "feature": "features/create_order_saga.feature",
-      "generatedAt": "2026-10-25T04:57:32.092Z"
+      "generatedAt": "2026-11-03T13:47:21.672Z"
     },
     {
       "filePath": "src/main/java/com/example/transactionalsystemjavavue/runtime/EventPublisher.java",
